@@ -1,5 +1,27 @@
 export const projectsData = [
   {
+    id: "document-intelligence-platform",
+    title: "Document Intelligence Platform",
+    tagline: "AI-Powered Full Stack Application",
+    description: "An AI-powered document analysis platform that transforms PDFs into interactive knowledge using Retrieval-Augmented Generation (RAG). Users can upload documents, generate summaries, create quizzes, and interact with files through contextual AI chat.",
+    overview: "The Document Intelligence Platform is an end-to-end AI SaaS architecture designed to parse complex PDF documents and enable semantic query search. By implementing a Retrieval-Augmented Generation (RAG) pipeline, it allows users to contextualize large documents, extract key insights, and interact with their uploaded files through a responsive chat interface.",
+    caseStudy: "A key technical challenge was parsing high-density PDFs and converting them into embeddings without causing high latency or context truncation. I developed an asynchronous backend with FastAPI to handle file uploads and run chunking strategies, then used FAISS to store vector embeddings created using HuggingFace. A semantic similarity search retrieval layer feeds relevant context to the Groq API to generate accurate, context-aware answers, while a PostgreSQL database keeps track of user and document states.",
+    learnings: "This project helped me master RAG architectures, FastAPI async performance, FAISS indexing, and vector similarity search. I also gained experience in structuring production-ready full-stack applications with separated frontend, backend, and database modules.",
+    tech: ["React", "FastAPI", "PostgreSQL", "RAG", "FAISS", "Groq", "AI", "Machine Learning", "Tailwind CSS"],
+    features: [
+      "PDF Upload & Management",
+      "RAG-based AI Chat",
+      "Smart Document Summarization",
+      "AI Quiz Generation",
+      "Context-Aware Responses",
+      "Dark/Light Mode",
+      "Responsive Modern UI"
+    ],
+    github: "https://github.com/saiteja-025/docai-project",
+    live: null,
+    image: "/research-ai.png"
+  },
+  {
     id: "ai-interview-trainer",
     title: "AI Interview Trainer",
     tagline: "AI-powered mock interview platform with real-time feedback",
@@ -34,23 +56,5 @@ export const projectsData = [
     github: "https://github.com/saiteja-025/AI-expense-agent-telegram-bot",
     live: null,
     image: "/expense-bot.png"
-  },
-  {
-    id: "ai-research-management",
-    title: "AI Research Management System",
-    tagline: "Smart research paper management with AI summarization",
-    description: "A system that helps organize, summarize, and manage research papers efficiently using AI for knowledge extraction.",
-    overview: "Researchers regularly comb through hundreds of dense academic PDFs. This project abstracts away the manual labor by providing an AI-driven dashboard that instantly extracts insights, synthesizes abstracts, and groups related methodologies across vast PDF libraries.",
-    caseStudy: "Parsing complex PDF structures with embedded equations and transforming them into searchable vector embeddings was the primary architectural challenge. A machine learning pipeline was constructed in Python to OCR and ingest the papers, feeding them into a sophisticated RAG (Retrieval-Augmented Generation) system. This allowed the React frontend to query specific domains of knowledge instantaneously.",
-    learnings: "I profoundly leveled up my capabilities in RAG architectures (Retrieval-Augmented Generation), vector databases, and full-stack React integration. Bridging complex Python ML pipelines with seamless client-side UI taught me advanced API design.",
-    tech: ["Python", "React", "Machine Learning"],
-    features: [
-      "AI-based summarization",
-      "Organized research tracking",
-      "Faster knowledge access"
-    ],
-    github: "https://github.com/saiteja2503/Devops-project",
-    live: null,
-    image: "/research-ai.png"
   }
 ];

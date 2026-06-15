@@ -8,6 +8,9 @@
   html {
     scroll-behavior: smooth;
   }
+  section {
+    scroll-margin-top: 6rem; /* 96px to clear the fixed navbar */
+  }
   body {
     @apply bg-slate-50 text-slate-900 dark:bg-[#0a0a0a] dark:text-gray-100 font-sans antialiased transition-colors duration-300;
   }

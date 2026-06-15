@@ -4,21 +4,23 @@ import { Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return prefersDark ? 'dark' : 'light';
+    }
+    return 'dark';
+  });
 
-  // Initial theme check
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setTheme('dark');
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
-      setTheme('light');
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -31,18 +33,15 @@ const Navbar = () => {
     const newTheme = isDark ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
   };
 
   const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
-    { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -62,12 +61,12 @@ const Navbar = () => {
         <a href="#" className="text-xl font-black tracking-tighter text-slate-900 dark:text-white">
           KS<span className="text-blue-600 dark:text-accent">.</span>
         </a>
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-4 lg:gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-slate-600 dark:text-secondary hover:text-slate-900 dark:hover:text-primary transition-colors"
+              className="text-xs lg:text-sm font-semibold text-slate-600 dark:text-secondary hover:text-slate-900 dark:hover:text-primary transition-colors"
             >
               {link.name}
             </a>

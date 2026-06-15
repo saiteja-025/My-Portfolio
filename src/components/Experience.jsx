@@ -26,18 +26,6 @@ const experiences = [
       "Used GitHub for version control and project management"
     ],
     impact: "Strengthened frontend development and real-world project building skills."
-  },
-  {
-    role: "Software Developer (Projects)",
-    company: "Independent",
-    duration: "Ongoing",
-    description: "Designing and building scalable applications with focus on real-world problem solving and user experience.",
-    responsibilities: [
-      "Built AI Interview Simulator",
-      "Developed AI Telegram Bot",
-      "Created AI Research Management System"
-    ],
-    impact: "Improved full-stack development and system design skills by building real-world applications."
   }
 ];
 

@@ -77,7 +77,7 @@ The compiled, optimized bundle is written to the `./dist/` directory.
 
 ## 🌐 Live Demo
 You can view the live deployed version of the portfolio here:
-👉 **[https://my-portfolio-saiteja.vercel.app]([https://saiteja025.vercel.app/])** *(Placeholder)*
+👉 **[https://saiteja025.vercel.app/]([https://saiteja025.vercel.app/])** *(Placeholder)*
 
 ---
 

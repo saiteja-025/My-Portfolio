@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 
 const Contact = () => {
@@ -81,10 +82,10 @@ const Contact = () => {
             <FaLinkedin size={24} />
             <span className="font-medium">LinkedIn</span>
           </a>
-          {/* <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-black transition-colors flex items-center gap-2">
-            <FaTwitter size={24} />
-            <span className="font-medium">X (Twitter)</span>
-          </a> */}
+          <a href="https://leetcode.com/u/lc_7fA92/" target="_blank" rel="noreferrer" className="text-gray-400 dark:text-gray-500 hover:text-[#FFA116] dark:hover:text-[#FFA116] transition-colors flex items-center gap-2">
+            <SiLeetcode size={24} />
+            <span className="font-medium">LeetCode</span>
+          </a>
         </div>
       </motion.div>
     </section>
